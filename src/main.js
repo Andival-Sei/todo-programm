@@ -10,6 +10,7 @@ const todoList = JSON.parse(localStorage.getItem("todos")) || [];
 // По умолчанию использует ключ "todos", но можно передать другой
 const saveToLocalStorage = (key = "todos") => {
   localStorage.setItem("todos", JSON.stringify(todoList));
+  console.log("Сохранено в localStorage:", todoList); // Отладка
 };
 
 // Обработчик клика по кнопке добавления задачи
@@ -17,7 +18,8 @@ addTodoBtn.addEventListener("click", () => {
   // Проверяем, что поле ввода не пустое (убираем пробелы по краям)
   if (input.value.trim()) {
     // Добавляем новую задачу в список
-    todoList.push(input.value);
+    todoList.push(input.value.trim()); // Используем trim() здесь тоже
+    console.log("Добавлена задача:", input.value.trim()); // Отладка
     // Очищаем поле ввода
     input.value = "";
 
@@ -31,7 +33,7 @@ addTodoBtn.addEventListener("click", () => {
 const createElement = (tagName, textContent) => {
   const element = document.createElement(tagName);
   element.textContent = textContent;
-
+  console.log("Создан элемент:", tagName, "с текстом:", textContent); // Отладка
   return element;
 };
 
@@ -45,6 +47,7 @@ const removeTodo = (index) => {
 const render = () => {
   // Очищаем контейнер перед отрисовкой
   container.innerHTML = "";
+  console.log("Отрисовка списка задач:", todoList); // Отладка
   // Проходим по каждой задаче в списке
   todoList.forEach((todo, index) => {
     // Создаем новый элемент для задачи и кнопку удаления
@@ -61,4 +64,5 @@ const render = () => {
 };
 
 // Выполняем первоначальную отрисовку списка при загрузке страницы
+console.log("Инициализация приложения..."); // Отладка
 render();
