@@ -1,5 +1,5 @@
 // Импортируем стили
-import "./styles.scss";
+import "./src/styles.scss";
 
 // Получаем необходимые элементы DOM
 const input = document.querySelector("[data-text-field]");
