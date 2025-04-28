@@ -1,14 +1,28 @@
-// Базовые стили для тёмной темы
+// Современные цвета и переменные для тёмной темы
+:root {
+  --primary-color: #8b5cf6;
+  --primary-hover: #7c3aed;
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --text-color: #e2e8f0;
+  --text-muted: #94a3b8;
+  --border-color: #334155;
+  --shadow: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  --radius: 0.75rem;
+}
+
+// Базовые стили
 * {
   box-sizing: border-box;
 }
 
 body {
-  // Используем логические свойства для высоты
-  // margin: 0;
-  background-color: #1a1a1a;
-  color: #ffffff;
-  font-family: Arial, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: "Inter", system-ui, -apple-system, sans-serif;
+  min-block-size: 100vh;
+  margin: 0;
+  padding: 1rem;
 }
 
 .my-alert {
@@ -25,49 +39,119 @@ body {
   /* Можно добавить другие стили по желанию */
 }
 
+// Контейнер для todo списка
 .todo-container {
-  margin: 50px auto;
-  padding: 0.5em;
-  inline-size: 500px;
-  border: 1px solid #fff;
-  gap: 10px;
-	background-color: #283e3e;
+  margin: 2rem auto;
+  padding: 2rem;
+  inline-size: min(90%, 600px);
+  background: var(--card-bg);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+
+  h1 {
+    margin-block-start: 0;
+    margin-block-end: 1.5rem;
+    font-size: 1.5rem;
+    color: var(--text-color);
+    font-weight: 600;
+  }
 }
 
+// Стили для поля ввода
 .text-field-wrapper {
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 10px;
-	
+  gap: 1rem;
+  margin-block-end: 2rem;
+
+  input {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius);
+    font-size: 1rem;
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.2s ease;
+
+    &::placeholder {
+      color: var(--text-muted);
+    }
+
+    &:focus {
+      outline: none;
+      border-color: var(--primary-color);
+      box-shadow: 0 0 0 3px rgba(139, 92, 246, 0.2);
+    }
+  }
+
+  button {
+    padding: 0.75rem 1.5rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--radius);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.2s ease;
+
+    &:hover {
+      background: var(--primary-hover);
+      transform: translateY(-1px);
+    }
+
+    &:active {
+      transform: translateY(0);
+    }
+  }
 }
 
-.text-field-wrapper input {
-  flex-grow: 3;
-  block-size: 30px;
+// Разделитель
+hr {
+  border: none;
+  border-top: 1px solid var(--border-color);
+  margin-block: 1.5rem;
+  opacity: 0.5;
 }
 
-.text-field-wrapper button {
-  flex-grow: 1;
-  block-size: 30px;
-}
-
+// Контейнер для списка задач
 .container {
-  block-size: 100%;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1rem;
 }
 
-
-
+// Стили для элементов списка
 .todo-item {
-  inline-size: 100%;
-  padding: 0.5em;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 10px;
-  border: 1px solid #887783;
-	background-color: #295860;
+  padding: 1rem;
+  background: var(--bg-color);
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+  transition: all 0.2s ease;
+
+  &:hover {
+    transform: translateX(4px);
+    border-color: var(--primary-color);
+    background: rgba(139, 92, 246, 0.1);
+  }
+
+  button {
+    padding: 0.5rem;
+    background: transparent;
+    border: none;
+    border-radius: var(--radius);
+    cursor: pointer;
+    transition: all 0.2s ease;
+    opacity: 0.7;
+    font-size: 1.2rem;
+
+    &:hover {
+      opacity: 1;
+      background: rgba(239, 68, 68, 0.2);
+      transform: scale(1.1);
+    }
+  }
 }

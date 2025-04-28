@@ -21,8 +21,8 @@ addTodoBtn.addEventListener("click", () => {
   // Проверяем, что поле ввода не пустое (убираем пробелы по краям)
   if (input.value.trim()) {
     // Добавляем новую задачу в список
-    todoList.push(input.value.trim()); // Используем trim() здесь тоже
-    console.log("Добавлена задача:", input.value.trim()); // Отладка
+    todoList.push(input.value.trim());
+    console.log("Добавлена задача:", input.value.trim());
     // Очищаем поле ввода
     input.value = "";
 
@@ -65,6 +65,13 @@ const render = () => {
     container.append(todoElement);
   });
 };
+
+// Добавляем обработчик нажатия Enter в поле ввода
+input.addEventListener("keypress", (e) => {
+  if (e.key === "Enter") {
+    addTodoBtn.click();
+  }
+});
 
 // Выполняем первоначальную отрисовку списка при загрузке страницы
 console.log("Инициализация приложения..."); // Отладка

@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Изучаем JavaScript</title>
     <link rel="icon" href="data:;base64,=" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <section class="todo-container">
+      <h1>Список задач</h1>
       <div class="text-field-wrapper">
-        <input type="text" data-text-field placeholder="Введите текст" />
-        <button data-add-todo-btn>Добавить todo</button>
+        <input type="text" data-text-field placeholder="Что нужно сделать?" />
+        <button data-add-todo-btn>Добавить</button>
       </div>
       <hr />
       <div data-todo-container class="container"></div>
