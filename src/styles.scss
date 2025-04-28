@@ -1,0 +1,28 @@
+// Базовые стили для тёмной темы
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  // Используем логические свойства для высоты
+  background-color: #1a1a1a;
+  color: #ffffff;
+  font-family: Arial, sans-serif;
+  min-block-size: 100vh;
+}
+
+.my-alert {
+  /* Логические свойства для отступов и выравнивания */
+  margin-block: 1rem;
+  padding-inline: 1.5rem;
+  padding-block: 1rem;
+  background-color: #ffeeba;
+  color: #856404;
+  border: 1px solid #ffeeba;
+  border-radius: 0.25rem;
+  font-weight: bold;
+  text-align: start;
+  /* Можно добавить другие стили по желанию */
+}
