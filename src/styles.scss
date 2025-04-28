@@ -1,16 +1,14 @@
 // Базовые стили для тёмной темы
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
 body {
   // Используем логические свойства для высоты
+  // margin: 0;
   background-color: #1a1a1a;
   color: #ffffff;
   font-family: Arial, sans-serif;
-  min-block-size: 100vh;
 }
 
 .my-alert {
@@ -25,4 +23,51 @@ body {
   font-weight: bold;
   text-align: start;
   /* Можно добавить другие стили по желанию */
+}
+
+.todo-container {
+  margin: 50px auto;
+  padding: 0.5em;
+  inline-size: 500px;
+  border: 1px solid #fff;
+  gap: 10px;
+	background-color: #283e3e;
+}
+
+.text-field-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+	
+}
+
+.text-field-wrapper input {
+  flex-grow: 3;
+  block-size: 30px;
+}
+
+.text-field-wrapper button {
+  flex-grow: 1;
+  block-size: 30px;
+}
+
+.container {
+  block-size: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+
+
+.todo-item {
+  inline-size: 100%;
+  padding: 0.5em;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #887783;
+	background-color: #295860;
 }

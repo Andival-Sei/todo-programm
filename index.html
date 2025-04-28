@@ -3,11 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="./src/main.js" defer></script>
     <title>Изучаем JavaScript</title>
     <link rel="stylesheet" href="./src/styles.scss" />
     <link rel="icon" href="data:;base64,=" />
   </head>
   <body>
-    <script src="script.js"></script>
-  </body>
+		<section class="todo-container">
+			<div class="text-field-wrapper">
+				<input type="text" data-text-field placeholder="Введите текст">
+				<button data-add-todo-btn>Добавить todo</button>
+			</div>
+			<hr>
+			<div data-todo-container class="container"></div>
+		</section>
+	</body>
 </html>
