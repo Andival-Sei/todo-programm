@@ -1,3 +1,6 @@
+// Импортируем стили
+import "./styles.scss";
+
 // Получаем необходимые элементы DOM
 const input = document.querySelector("[data-text-field]");
 const addTodoBtn = document.querySelector("[data-add-todo-btn]");
