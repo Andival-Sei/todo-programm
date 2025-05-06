@@ -1,9 +1,10 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Изучаем JavaScript</title>
+    <title>ToDo App Advanced</title>
+    <script defer type="module" src="./src/scripts/main.js"></script>
     <link rel="icon" href="data:;base64,=" />
     <link
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
@@ -11,15 +12,39 @@
     />
   </head>
   <body>
-    <section class="todo-container">
-      <h1>Список задач</h1>
-      <div class="text-field-wrapper">
-        <input type="text" data-text-field placeholder="Что нужно сделать?" />
-        <button data-add-todo-btn>Добавить</button>
+    <header class="header">
+      <h1>TODO APP</h1>
+    </header>
+
+    <main>
+      <section class="add-input-container">
+        <input
+          type="text"
+          placeholder="add todo"
+          class="add-todo-input"
+          data-add-todo-input
+        />
+        <button class="add-todo-btn" data-add-todo-btn>add todo</button>
+      </section>
+
+			<section class="search-input-container">
+				<input type="text" placeholder="search todo" class="search-todo-input" data-search-todo-input />
+			</section>
+
+      <section class="todo-list-container" data-todo-container></section>
+    </main>
+
+    <template data-todo-template>
+      <div class="todo">
+        <input type="checkbox" class="todo-checkbox" data-todo-checkbox />
+        <div class="todo-info">
+          <p class="todo-text" data-todo-text>go to jym</p>
+          <span class="todo-creation-date" data-todo-creation-date
+            >03-10-24</span
+          >
+        </div>
+        <button class="remove-todo-btn" data-remove-todo-btn>X</button>
       </div>
-      <hr />
-      <div data-todo-container class="container"></div>
-    </section>
-    <script type="module" src="./main.js"></script>
+    </template>
   </body>
 </html>
